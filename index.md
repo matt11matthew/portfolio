@@ -1,7 +1,9 @@
 ---
 layout: default
+
 ---
-* * *
+# [](#header-1)Projects
+---
 ## [](#header-2)Header 2
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 ![](https://guides.github.com/activities/hello-world/branching.png)
@@ -10,7 +12,7 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 ## [](#header-2)Header 2
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 * * *
-
+---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
