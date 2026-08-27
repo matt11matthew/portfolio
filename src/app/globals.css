@@ -549,6 +549,197 @@ summary {
   text-transform: uppercase;
 }
 
+.repository-section {
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 12% 22%, rgba(78, 213, 255, 0.06), transparent 28rem),
+    #060a0e;
+}
+
+.repository-toolbar {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: minmax(18rem, 1fr) minmax(12rem, 0.36fr) minmax(12rem, 0.36fr);
+  gap: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: rgba(10, 17, 23, 0.82);
+}
+
+.repository-toolbar label {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.repository-toolbar label > span,
+.repository-results,
+.repository-card-flags,
+.repository-owner,
+.repository-meta,
+.repository-links {
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.repository-toolbar label > span {
+  color: #87929a;
+  font-size: 0.62rem;
+}
+
+.repository-toolbar input,
+.repository-toolbar select {
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.75rem 0.9rem;
+  color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  outline: 0;
+  background: #070d12;
+  font: inherit;
+}
+
+.repository-toolbar input::placeholder {
+  color: #66727b;
+}
+
+.repository-toolbar input:focus,
+.repository-toolbar select:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px rgba(78, 213, 255, 0.1);
+}
+
+.repository-results {
+  display: flex;
+  min-height: 3.8rem;
+  padding: 1rem 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #79858e;
+  font-size: 0.62rem;
+}
+
+.repository-results p {
+  margin: 0;
+  color: var(--cyan);
+}
+
+.repository-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.repository-card {
+  display: flex;
+  min-width: 0;
+  min-height: 23rem;
+  padding: 1.2rem;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: linear-gradient(145deg, rgba(13, 22, 30, 0.92), rgba(5, 9, 13, 0.98));
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.repository-card:hover {
+  border-color: rgba(78, 213, 255, 0.42);
+  transform: translateY(-2px);
+}
+
+.repository-card-flags {
+  display: flex;
+  min-height: 1.35rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.repository-card-flags span,
+.repository-topics li {
+  padding: 0.25rem 0.45rem;
+  color: #8fa0aa;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(78, 213, 255, 0.035);
+  font-size: 0.56rem;
+}
+
+.repository-owner {
+  margin: 2rem 0 0.45rem;
+  overflow: hidden;
+  color: var(--cyan);
+  font-size: 0.6rem;
+  text-overflow: ellipsis;
+}
+
+.repository-card h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 1.45rem;
+  font-weight: 570;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.repository-description {
+  margin: 1rem 0;
+  color: var(--paper-muted);
+  line-height: 1.6;
+}
+
+.repository-topics {
+  display: flex;
+  margin: 0 0 1.3rem;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.repository-topics li {
+  color: #8fb9cc;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.repository-meta {
+  display: flex;
+  margin-top: auto;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: #7e8a92;
+  border-top: 1px solid var(--line);
+  font-size: 0.57rem;
+}
+
+.repository-links {
+  display: flex;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.63rem;
+}
+
+.repository-links a {
+  color: var(--paper);
+  border-bottom: 1px solid var(--line-strong);
+  line-height: 1.8;
+}
+
+.repository-empty {
+  display: grid;
+  min-height: 12rem;
+  place-items: center;
+  color: var(--paper-muted);
+  border: 1px dashed var(--line);
+}
+
+.repository-expand {
+  margin: 2rem auto 0;
+}
+
 .lifecycle-section {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -717,6 +908,7 @@ summary {
   .lifecycle-grid { grid-template-columns: repeat(2, 1fr); }
   .lifecycle-grid li:nth-child(2) { border-right: 0; }
   .lifecycle-grid li:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+  .repository-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 820px) {
@@ -764,6 +956,11 @@ summary {
   .proof-strip { margin-top: -1rem; }
   .section-heading { grid-template-columns: 1fr; gap: 1.5rem; }
   .project-grid, .notes-grid { grid-template-columns: 1fr; }
+  .repository-toolbar, .repository-grid { grid-template-columns: 1fr; }
+  .repository-results {
+    align-items: flex-start;
+    flex-direction: column;
+  }
   .project-card { min-height: 31rem; }
   .about-section { grid-template-columns: 1fr; }
 }

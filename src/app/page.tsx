@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProjectExplorer } from "@/components/project-explorer";
+import { RepositoryCatalog } from "@/components/repository-catalog";
+import { publicGitHubRepositories } from "@/data/github-repositories";
 
 const stats = [
   { value: "10+", label: "years building" },
   { value: "900+", label: "plugin commissions" },
-  { value: "94", label: "public repositories" },
+  { value: String(publicGitHubRepositories.length), label: "public repos indexed" },
   { value: "2,032", label: "contributions this year" },
 ];
 
@@ -67,6 +69,7 @@ export default function Home() {
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#work">Work</a>
+          <a href="#repositories">Repositories</a>
           <a href="#capabilities">Capabilities</a>
           <a href="#field-notes">Field notes</a>
           <a href="#about">About</a>
@@ -77,6 +80,7 @@ export default function Home() {
           <summary>Menu</summary>
           <nav aria-label="Mobile navigation">
             <a href="#work">Work</a>
+            <a href="#repositories">Repositories</a>
             <a href="#capabilities">Capabilities</a>
             <a href="#field-notes">Field notes</a>
             <a href="#about">About</a>
@@ -146,6 +150,25 @@ export default function Home() {
             </p>
           </div>
           <ProjectExplorer />
+        </section>
+
+        <section
+          className="section repository-section"
+          id="repositories"
+          aria-labelledby="repositories-title"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">GitHub / public inventory</p>
+              <h2 id="repositories-title">The public code trail.</h2>
+            </div>
+            <p>
+              Search the public repositories across Matthew&apos;s authenticated
+              GitHub inventory. Ownership is labeled explicitly; private repository
+              metadata never enters the site bundle.
+            </p>
+          </div>
+          <RepositoryCatalog repositories={publicGitHubRepositories} />
         </section>
 
         <section

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sync:github": "node scripts/sync-github-repos.mjs",
+    "verify:repos": "node scripts/verify-public-repos.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
